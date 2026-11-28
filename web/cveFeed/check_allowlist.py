@@ -104,7 +104,7 @@ _NUMBERED_NAME = re.compile(r'([a-z_]+?)_([1-9][0-9]?)')
 _RANDSTR = re.compile(r'randstr(?:_[1-9][0-9]?)?')
 # YAML 1.1 line breaks (YAML 1.2 reads them as ordinary characters), bidi controls and every C0/C1 control but tab and newline. A carriage return
 # is allowed only as the first half of CRLF (``_LONE_CR``): both YAML versions and both readers make CRLF one line break read as a line feed.
-_BAD_CHARS = re.compile('[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f\u2028\u2029\u200b-\u200f\u202a-\u202e\u2066-\u2069\ufeff]')
+_BAD_CHARS = re.compile('[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f\u2028\u2029\u200b\u200c\u200d\u200e\u200f\u202a-\u202e\u2066-\u2069\ufeff]' )
 _LONE_CR = re.compile('\r(?!\n)')
 _TOKEN = re.compile(r'''\s+|(?P<str>'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*")|(?P<num>\d+(?:\.\d+)?)|(?P<id>[A-Za-z_][A-Za-z0-9_]*)'''
                     r'''|(?P<op>==|!=|>=|<=|=~|!~|&&|\|\||[-+*/%<>!(),?:])''')
